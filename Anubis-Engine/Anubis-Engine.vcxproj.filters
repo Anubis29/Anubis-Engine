@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Anubis-Engine">
+      <UniqueIdentifier>{1D9A6D23-8906-291E-52FA-C07BBE254B86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Anubis-Engine\core">
+      <UniqueIdentifier>{B5242ED1-A134-DAA1-0AEE-3EC0F61CC93A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Anubis-Engine\platform">
+      <UniqueIdentifier>{31237642-1D49-40A9-068F-C574F2536575}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Anubis-Engine\platform\windows">
+      <UniqueIdentifier>{8B0610CD-7758-E7BC-6077-24CD4C6800A6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{C55F2ECF-B12C-89DA-DA45-7782C671BE68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\platform">
+      <UniqueIdentifier>{41663D6D-2DC9-CC11-D64E-05C8C2909894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\platform\windows">
+      <UniqueIdentifier>{9B5931A8-87E8-BA71-3007-CF6C1C75CB17}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Anubis-Engine\core\Window.hpp">
+      <Filter>include\Anubis-Engine\core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Anubis-Engine\core\core.hpp">
+      <Filter>include\Anubis-Engine\core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Anubis-Engine\platform\windows\WindowsWindow.hpp">
+      <Filter>include\Anubis-Engine\platform\windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\core\Window.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\windows\WindowsWindow.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
