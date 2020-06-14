@@ -68,12 +68,14 @@ project "Sandbox"
 	
 	libdirs
 	{
-		"vendor/glfw/bin/%{cfg.architecture}/%{cfg.name}"
+		"vendor/glfw/bin/%{cfg.architecture}/%{cfg.name}",
+		("bin/" .. outputdir .. "/Anubis-Engine")
 	}
 	
 	links
 	{
-		"glfw3"
+		"glfw3",
+		"Anubis-Engine"
 	}
 	
 	
