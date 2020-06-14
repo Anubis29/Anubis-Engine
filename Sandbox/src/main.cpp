@@ -11,8 +11,9 @@ int main(void) {
     
     while (!window->isClosed())
     {
-        glfwPollEvents();
+        ABE::Window::pollEvents();
+    
     }
-
+    
     return EXIT_SUCCESS;
 }
