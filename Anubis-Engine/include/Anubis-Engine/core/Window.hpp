@@ -11,10 +11,10 @@ namespace ABE
     {
     public:
         static Scope<Window> create(uint w, uint h, const char* title);
+        static void pollEvents(void);
 
         virtual ~Window(void) = default;
 
-        virtual void updateEvents(void) = 0;
 
         virtual const char* getTitle(void) const = 0;
         virtual void setTitle(const char* title) = 0;

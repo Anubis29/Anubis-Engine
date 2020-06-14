@@ -12,7 +12,7 @@ namespace ABE
         WindowsWindow(uint w, uint h, const char *title);
         virtual ~WindowsWindow(void);
 
-        virtual void updateEvents(void) override;
+        static void pollEvents(void);
 
         virtual const char* getTitle(void) const override;
         virtual void setTitle(const char* title) override;

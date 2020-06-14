@@ -2,15 +2,20 @@
 
 #ifdef ABE_PLATFORM_WINDOWS
 #include "Anubis-Engine/platform/windows/WindowsWindow.hpp"
+#define ABE_WINDOW_PLATFORM_CLASS WindowsWindow
 #endif // ABE_PLATFORM_WINDOWS
+
 
 
 namespace ABE
 {
     Scope<Window> Window::create(uint w, uint h, const char *title) 
     {
-        #ifdef ABE_PLATFORM_WINDOWS
-        return std::make_unique<WindowsWindow>(w, h, title);
-        #endif  
+        return std::make_unique<ABE_WINDOW_PLATFORM_CLASS>(w, h, title);
     }
+
+    void Window::pollEvents(void) {
+        ABE_WINDOW_PLATFORM_CLASS::pollEvents();
+    }
+
 }

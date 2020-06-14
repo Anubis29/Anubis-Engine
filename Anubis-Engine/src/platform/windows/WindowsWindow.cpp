@@ -31,9 +31,9 @@ namespace ABE
         close();
     }
 
-    void WindowsWindow::updateEvents(void) 
+    void WindowsWindow::pollEvents(void)
     {
-        ABE_ASSERT(!isClosed(), "Failed to update events on closed window");
+        ABE_ASSERT(s_WindowCount != 0, "Failed to update events. GLFW is not initialized!");
         glfwPollEvents();
     }
 
