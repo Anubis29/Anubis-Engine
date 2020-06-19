@@ -19,7 +19,7 @@ namespace ABE
 
         glfwSetWindowCloseCallback(m_pGLFWWindow, [](GLFWwindow* pWindow) {
             WindowsWindow* window = reinterpret_cast<WindowsWindow*>(glfwGetWindowUserPointer(pWindow));
-            window->close();
+            window->Close();
             });
 
         glfwMakeContextCurrent(m_pGLFWWindow);
@@ -28,57 +28,50 @@ namespace ABE
 
     WindowsWindow::~WindowsWindow(void)
     {
-        close();
+        Close();
     }
 
-    void WindowsWindow::pollEvents(void)
+    void WindowsWindow::PollEvents(void)
     {
         ABE_ASSERT(s_WindowCount != 0, "Failed to update events. GLFW is not initialized!");
         glfwPollEvents();
     }
 
-    const char* WindowsWindow::getTitle(void) const
+    const char* WindowsWindow::Title(void) const
     {
         return m_Title.c_str();
     }
 
-    uint WindowsWindow::getWidth(void) const
-    {
-        return m_Width;
-    }
-
-    uint WindowsWindow::getHeight(void) const
-    {
-        return m_Height;
-    }
+    uint WindowsWindow::Width(void) const {  return m_Width; }
+    uint WindowsWindow::Height(void) const { return m_Height; }
 
 
-    void WindowsWindow::setTitle(const char* title) 
+    void WindowsWindow::SetTitle(const char* title) 
     { 
-        ABE_ASSERT(!isClosed(), "Cannot rename a closed window!");
+        ABE_ASSERT(!IsClosed(), "Cannot rename a closed window!");
         m_Title = std::string(title);
         glfwSetWindowTitle(m_pGLFWWindow, title);
     }
 
-    void WindowsWindow::setWidth(uint width)
+    void WindowsWindow::SetWidth(uint width)
     {
-        ABE_ASSERT(!isClosed(), "Cannot resize a closed window!");
+        ABE_ASSERT(!IsClosed(), "Cannot resize a closed window!");
         m_Width = width;
         glfwSetWindowSize(m_pGLFWWindow, m_Width, m_Height);
     }
 
-    void WindowsWindow::setHeight(uint height)
+    void WindowsWindow::SetHeight(uint height)
     {
-        ABE_ASSERT(!isClosed(), "Cannot resize a closed window!");
+        ABE_ASSERT(!IsClosed(), "Cannot resize a closed window!");
         m_Height = height;
         glfwSetWindowSize(m_pGLFWWindow, m_Width, m_Height);
     }
 
-    bool WindowsWindow::isClosed(void) const {
+    bool WindowsWindow::IsClosed(void) const {
         return m_pGLFWWindow == nullptr;
     }
 
-    void WindowsWindow::close(void) 
+    void WindowsWindow::Close(void) 
     {
         if (m_pGLFWWindow != nullptr) 
         {
@@ -91,4 +84,9 @@ namespace ABE
             }
         }
     }
+
+    void* WindowsWindow::GetNativeWindow(void) const {
+        return m_pGLFWWindow;
+    }
+
 }

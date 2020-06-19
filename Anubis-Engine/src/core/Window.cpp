@@ -9,13 +9,13 @@
 
 namespace ABE
 {
-    Scope<Window> Window::create(uint w, uint h, const char *title) 
+    Scope<Window> Window::Create(uint w, uint h, const char *title) 
     {
         return std::make_unique<ABE_WINDOW_PLATFORM_CLASS>(w, h, title);
     }
 
-    void Window::pollEvents(void) {
-        ABE_WINDOW_PLATFORM_CLASS::pollEvents();
+    void Window::PollEvents(void) {
+        ABE_WINDOW_PLATFORM_CLASS::PollEvents();
     }
 
 }

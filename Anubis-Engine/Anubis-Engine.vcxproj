@@ -86,11 +86,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\Anubis-Engine\core\Application.hpp" />
+    <ClInclude Include="include\Anubis-Engine\core\Inputs.hpp" />
     <ClInclude Include="include\Anubis-Engine\core\Window.hpp" />
     <ClInclude Include="include\Anubis-Engine\core\core.hpp" />
+    <ClInclude Include="include\Anubis-Engine\platform\windows\WindowsInput.hpp" />
     <ClInclude Include="include\Anubis-Engine\platform\windows\WindowsWindow.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\core\Application.cpp" />
+    <ClCompile Include="src\core\Input.cpp" />
     <ClCompile Include="src\core\Window.cpp" />
     <ClCompile Include="src\platform\windows\WindowsWindow.cpp" />
   </ItemGroup>

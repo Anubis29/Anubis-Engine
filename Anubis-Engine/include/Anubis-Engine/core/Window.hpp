@@ -10,23 +10,25 @@ namespace ABE
     class Window
     {
     public:
-        static Scope<Window> create(uint w, uint h, const char* title);
-        static void pollEvents(void);
+        static Scope<Window> Create(uint w, uint h, const char* title);
+        static void PollEvents(void);
 
         virtual ~Window(void) = default;
 
 
-        virtual const char* getTitle(void) const = 0;
-        virtual void setTitle(const char* title) = 0;
+        virtual const char* Title(void) const = 0;
+        virtual void SetTitle(const char* title) = 0;
 
-        virtual uint getWidth(void) const = 0;
-        virtual void setWidth(uint width) = 0;
+        virtual uint Width(void) const = 0;
+        virtual void SetWidth(uint width) = 0;
 
-        virtual uint getHeight(void) const = 0;
-        virtual void setHeight(uint height) = 0;
+        virtual uint Height(void) const = 0;
+        virtual void SetHeight(uint height) = 0;
 
-        virtual bool isClosed(void) const = 0;
-        virtual void close(void) = 0;
+        virtual bool IsClosed(void) const = 0;
+        virtual void Close(void) = 0;
+
+        virtual void* GetNativeWindow(void) const = 0;
     };
 }
 

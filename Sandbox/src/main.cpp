@@ -1,19 +1,13 @@
 #include <stdlib.h>
 
 #include "Anubis-Engine/core/core.hpp"
-#include "Anubis-Engine/core/Window.hpp"
-
-#include <glfw/glfw3.h>
+#include "Anubis-Engine/core/Application.hpp"
 
 int main(void) {
 
-    ABE::Scope<ABE::Window> window = ABE::Window::create(800, 600, "Sandbox");
-    
-    while (!window->isClosed())
-    {
-        ABE::Window::pollEvents();
-    
-    }
+    ABE::Application app;
+
+    app.Run();
     
     return EXIT_SUCCESS;
 }

@@ -12,19 +12,22 @@ namespace ABE
         WindowsWindow(uint w, uint h, const char *title);
         virtual ~WindowsWindow(void);
 
-        static void pollEvents(void);
+        static void PollEvents(void);
 
-        virtual const char* getTitle(void) const override;
-        virtual void setTitle(const char* title) override;
+        virtual const char* Title(void) const override;
+        virtual void SetTitle(const char* title) override;
 
-        virtual uint getWidth(void) const override;
-        virtual void setWidth(uint width) override;
+        virtual uint Width(void) const override;
+        virtual void SetWidth(uint width) override;
 
-        virtual uint getHeight(void) const override;
-        virtual void setHeight(uint height) override;
+        virtual uint Height(void) const override;
+        virtual void SetHeight(uint height) override;
 
-        virtual bool isClosed(void) const override;
-        virtual void close(void) override;
+        virtual bool IsClosed(void) const override;
+        virtual void Close(void) override;
+
+        virtual void* GetNativeWindow(void) const override;
+
 
     private :
         static uint s_WindowCount;
